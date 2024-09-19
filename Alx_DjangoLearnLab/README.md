@@ -1,1 +1,1 @@
-Django projects
+DJANGO PROJECTS
