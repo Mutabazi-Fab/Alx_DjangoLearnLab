@@ -30,4 +30,3 @@ The permissions are enforced in the following views:
 - create_book: requires can_create_book permission
 - edit_book: requires can_edit_book permission
 - delete_book: requires can_delete_book permission
-
