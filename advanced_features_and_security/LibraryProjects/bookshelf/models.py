@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.models import AbstractUser
@@ -48,7 +47,7 @@ class Book(models.Model):
             ('can_view', 'Can view book'),
             ('can_create', 'Can create book'),
             ('can_delete', 'Can delete book'),
-        ]
-    
+        ] 
+          
     def __str__(self):
         return self.title
