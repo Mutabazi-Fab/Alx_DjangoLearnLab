@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>
+        {{ post.title }}
+    </h2>
+    <small>
+        <i>
+            <p>Author: {{ post.author }}</p>
+        </i>
+        <p>{{ post.published_date }}</p>
+    </small>
+    
+    {% if user == post.author %}
+        <small>
+            <a href="{% url 'post_editForm' pk=post.pk %}">Edit</a>
+            <a href="{% url 'post_delete' pk=post.pk %}">Delete</a>
+        </small>
+    {% endif %}
+    
+    <hr><br>
+    <p>{{ post.content }}</p>
+    <br>
+    <p><strong>Tags:</strong> 
+        {% for tag in post.tags.all %}
+            <a href="{% url 'posts_by_tag' tag.slug %}" class="badge badge-primary">{{ tag.name }}</a>
+        {% endfor %}
+
+    <!-- Include the comment list for the post -->
+    {% include 'comment/comment_list.html' %}  
+    
+{% endblock %}
